@@ -24,6 +24,20 @@ Estrutura do retorno em JSON
 }]
 
 
+## Creating the app at Heroku
+You should install heroku CLI tools in your computer previously ( See http://bit.ly/2jCgJYW ) 
+* heroku apps:create app-name
+Remember to grab the address of the app in this point
 
-# python_filmes
+### Sending configs from .env to Heroku ( You have to be inside tha folther where .env files is)
+* heroku plugins:install heroku-config
+* heroku config:push -a
+
+### To show heroku configs do
+* heroku config 
+
+## Publishing the app
+* git add .
+* git commit -m 'Configuring the app'
+* git push heroku master --force
 
