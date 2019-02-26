@@ -8,7 +8,7 @@ app = Flask(__name__)
 #Criar GetByID: http://blog.luisrei.com/articles/flaskrest.html
 
 
-@app.route('/api/v1/filmes', methods=['GET'])
+@app.route('/', methods=['GET'])
 def todos_filmes():
     URL = "http://www.adorocinema.com/filmes/todos-filmes/notas-espectadores/"
     
@@ -41,7 +41,7 @@ def todos_filmes():
     return jsonify({'filmes': data})  
 
 
-@app.route('/api/v1/filmes/<page_id>', methods=['GET'])
+@app.route('/<page_id>', methods=['GET'])
 def todos_filmes_page(page_id):
     URL = "http://www.adorocinema.com/filmes/todos-filmes/notas-espectadores/?page={}".format(page_id)
     
@@ -74,7 +74,7 @@ def todos_filmes_page(page_id):
     return jsonify({'filmes': data})    
 
 
-@app.route('/api/v1/filmes/emcartaz', methods=['GET'])
+@app.route('/emcartaz', methods=['GET'])
 def em_cartaz():
     html_doc = urlopen("http://www.adorocinema.com/filmes/numero-cinemas/").read()
     soup = BeautifulSoup(html_doc, "html.parser")
@@ -102,7 +102,7 @@ def em_cartaz():
     return jsonify({'filmes': data})
 
 
-@app.route('/api/v1/filmes/emcartaz/<page_id>', methods=['GET'])
+@app.route('/emcartaz/<page_id>', methods=['GET'])
 def em_cartaz_page(page_id):
     URL = "http://www.adorocinema.com/filmes/todos-filmes/numero-cinemas/?page={}".format(page_id)
     html_doc = urlopen(URL)
