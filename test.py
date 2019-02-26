@@ -11,3 +11,5 @@ data = []
 for dataBox in soup.find_all("div", class_="data_box"):
     content = dataBox.find("div", class_="content")
     print(content.text.strip().split('Gênero')[1][100:])
+
+print("Deploy start and test")
