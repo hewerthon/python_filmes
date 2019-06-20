@@ -29,6 +29,7 @@ def filmes():
     #     status=200,
     #     mimetype='application/json'
     # )
+    # teste
     # return response
     
     return jsonify({'filmes': data})
